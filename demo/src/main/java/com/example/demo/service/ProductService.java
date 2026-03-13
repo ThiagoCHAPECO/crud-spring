@@ -22,6 +22,10 @@ public class ProductService {
         productRepository.deleteById(id);
     }
 
+    public ProductModel buscarId(Long id){
+        return productRepository.findById(id);
+    }
+
 
     public ProductModel cadastrarProduto(ProductModel productModel){
         return productRepository.save(productModel);
