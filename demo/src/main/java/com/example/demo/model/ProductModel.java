@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import com.example.demo.enums.ProductEnum;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,16 +17,18 @@ public class ProductModel {
     String nome;
     Double preco;
     Integer quantidadeEmEstoque;
+    private ProductEnum productEnum;
 
     public ProductModel(){
 
     }
 
-    public ProductModel(Long id, String nome, Double preco, Integer quantidadeEmEstoque) {
+    public ProductModel(Long id, String nome, Double preco, Integer quantidadeEmEstoque, ProductEnum productEnum) {
         this.id = id;
         this.nome = nome;
         this.preco = preco;
         this.quantidadeEmEstoque = quantidadeEmEstoque;
+        this.productEnum = productEnum;
     }
 
     public Long getId() {
@@ -58,5 +61,13 @@ public class ProductModel {
 
     public void setQuantidadeEmEstoque(Integer quantidadeEmEstoque) {
         this.quantidadeEmEstoque = quantidadeEmEstoque;
+    }
+
+    public ProductEnum getProductEnum() {
+        return productEnum;
+    }
+
+    public void setProductEnum(ProductEnum productEnum) {
+        this.productEnum = productEnum;
     }
 }
